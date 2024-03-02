@@ -36,7 +36,8 @@ export default {
   },
   methods:{
       addjob(){
-        this.$store.commit('addWorker', this.stuff)
+        this.$store.commit('addWorker', {...this.stuff})
+        this.stuff = new Cat()
       }
     }
 }

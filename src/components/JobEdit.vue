@@ -11,7 +11,6 @@
         Fge {{ age }} <br/>
         dste {{ startDate }}
       </p>
-      <router-link class="nav-link" to="{ name: 'edit', params:{nic: nickname}}">Редактировать</router-link>
       <button v-on:click="editCat" type="button" class="btn btn-secondary">Увше</button>
       <button v-on:click="deleteCat" type="button" class="btn btn-danger">Delete</button>
 

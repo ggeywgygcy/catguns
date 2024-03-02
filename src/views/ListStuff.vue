@@ -5,8 +5,10 @@
 
 
   <div v-for="cat in stuff" :key = "cat.nickname" >
-    <JobCard />
-    {{cat.nickname}}
+    <JobCard :nickname="cat.nickname" 
+        :age="cat.age"
+        :startDate="cat.dateStarJob" v-on:delete="deleteCat"
+        />
   </div>
     
   </div>
@@ -26,6 +28,11 @@ export default {
       return this.$store.getters.getAddJob
     }
  
+  },
+  methods:{
+    deleteCat(e){
+      this.$store.commit('deleteCatName', e)
+    }
   }
 }
 </script>

@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Addjob from '@/components/Addjob.vue'
 import ListStuff from '@/views/ListStuff.vue'
+import JodEdit from '@/views/JodEdit.vue'
 const routes = [
   {
     path: '/',
@@ -17,6 +18,12 @@ const routes = [
     path: '/liststuff',
     name: 'liststuff',
     component: ListStuff
+  },
+  {
+    path: '/edit:/nic',
+    name: 'edit',
+    props: 'true',
+    component: JodEdit
   }
 ]
 
