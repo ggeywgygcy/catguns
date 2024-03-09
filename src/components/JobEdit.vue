@@ -1,46 +1,53 @@
 <template>
-  <div class="home">
-  <h1> список сотрудников банды</h1>
-
-  <div>
-    <div class="card" style="width: 18rem;">
-      <!--<img src="..." class="card-img-top" alt="...">-->
-      <div class="card-body">
-      <h5 class="card-title">{{ nickname }}</h5>
-      <p class="card-text">
-        Fge {{ age }} <br/>
-        dste {{ startDate }}
-      </p>
-      <button v-on:click="editCat" type="button" class="btn btn-secondary">Увше</button>
-      <button v-on:click="deleteCat" type="button" class="btn btn-danger">Delete</button>
-
-  </div>
-</div>
-  </div>  
-    
+  <div class="rows">
+  <h1> Редактирование сотрудника {{staff.nickname}} </h1>
+      <div>
+          <div class="mb-3">
+          <label for="CatName" class="form-label">Кличка</label>
+          <input v-model="staff.nickname" type="text" class="form-control" id="CatName" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="catAge" class="form-label">Возраст</label>
+        <input v-model="staff.age" type="text" class="form-control" id="catAge">
+      </div>
+      <div class="mb-3">
+        <label for="catJobDate" class="form-label">Дата приема на работу</label>
+        <input v-model = "staff.dateStartJob" type="date" class="form-control" id="catJobDate">
+      </div>
+      <div class="mb-3">
+        <label for="catStreet" class="form-label">Место патрулирования</label>
+        <input v-model = "staff.street" type="date" class="form-control" id="catJobDate">
+      </div>
+      <button v-on:click="editJob" class="btn btn-primary">Сохранить</button>
+      </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
-
+import Cat from '@/lib/Cat.js'
 export default {
-  name: 'JobCard',
-  emits:['delete'],
+  name: 'JobEdit',
   props: {
-    nickname: '',
-    age: '',
-    startDate: ''
+    id: Number
+  },
+  data(){
+    return {
+       staff:  Cat
+    }
+   
   },
   methods:{
-    deleteCat(){
-      //alert(`nickname ${this.nickname}`)
-      this.$emit('delete', this.$props.nickname)
-    },
-    editCat(){
-      this.$emit('edit', this.$props.nickname)
+    ediJob(){
+        this.$store.commit('editWorker', {...this.staff})
+        //this.staff = new Cat()
     }
+  },
+  mounted(){
+    this.$el.staff = this.$store.getters.getCatbyId(this.id)
   }
 }
 </script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+</style>

@@ -1,24 +1,21 @@
 <template>
   <div class="rows">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">JJKGungs</a>
+    <a class="navbar-brand" href="#">CatGungs</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <router-link class="nav-link" to="/">Home</router-link>
+          <router-link class="nav-link" to="/">Гавная</router-link> 
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/addjob">jobes</router-link>
+          <router-link class="nav-link" to="/addjob">Принять на работу</router-link> 
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/liststuff">spis</router-link>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">jobes</a>
+          <router-link class="nav-link" to="/liststaff">Список сотрудников</router-link> 
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -56,18 +53,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>

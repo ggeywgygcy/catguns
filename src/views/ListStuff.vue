@@ -4,8 +4,10 @@
  
 
 
-  <div v-for="cat in stuff" :key = "cat.nickname" >
-    <JobCard :nickname="cat.nickname" 
+  <div v-for="cat in stuff" :key = "cat.id" >
+    <JobCard 
+        :id="cat.id"
+        :nickname="cat.id" 
         :age="cat.age"
         :startDate="cat.dateStarJob" v-on:delete="deleteCat"
         />

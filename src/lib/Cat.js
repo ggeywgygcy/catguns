@@ -1,12 +1,11 @@
 class Cat{
-    nickname
-    age
-    dateStarJob
-    constructor(inickname, iage, idate){
-        this.nickname = inickname
-        this.age = iage
-        this.dateStarJob = idate
-
+    constructor(id, inickname, iage, idate, istreet){
+        this.id = id;
+        this.nickname = inickname;
+        this.age = iage;
+        this.dateStartJob = idate;
+        this.street = istreet;
     }
 }
+
 export default Cat;
